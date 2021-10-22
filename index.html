@@ -192,6 +192,11 @@
 
     <!-- openlayers style  -->
 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"          rel="stylesheet" />
+    <link rel="stylesheet" href="https://rawgit.com/Turbo87/sidebar-v2/master/css/ol3-sidebar.css" />
+    <link rel="stylesheet" href="Style/ol-layerswitcher.css" />
+    <link rel="stylesheet" href="Style/sidebar.css" />
+
     <style type="text/css">
 
         /* Limit the width of the layer-switcher */
@@ -450,16 +455,100 @@
                                                 <div class="row">
                                                     <!-- for map service-->
 
-                                                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 m-auto m-panel-left">
-                                                    </div>
+                                                    <!--<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 m-auto m-panel-left">
+                                                    </div>-->
 
-                                                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 m-auto m-panel-left">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 m-auto m-panel-left">
 
-                                                        <div id='map_openlayers' style="height: 660px; border: solid 1px #ddd; width: 100%;">
+                                                        <!-- START OF SIDEBAR DIV -->
+                                                        <div id="sidebar" class="sidebar collapsed">
+                                                            <!-- Nav tabs -->
+                                                            <div class="sidebar-tabs">
+                                                                <ul role="tablist">
+                                                                    <li>
+                                                                        <a href="#home" role="tab"><i class="fa fa-bars"></i></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#profile" role="tab"><i class="fa fa-user"></i></a>
+                                                                    </li>
+                                                                    <li class="disabled">
+                                                                        <a href="#messages" role="tab"><i class="fa fa-envelope"></i></a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="https://github.com/Turbo87/sidebar-v2"
+                                                                           role="tab"
+                                                                           target="_blank">
+                                                                            <i class="fa fa-github"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+
+                                                                <ul role="tablist">
+                                                                    <li>
+                                                                        <a href="#settings" role="tab"><i class="fa fa-gear"></i></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <!-- Tab panes -->
+                                                            <div class="sidebar-content">
+                                                                <div class="sidebar-pane" id="home">
+                                                                    <h1 class="sidebar-header">
+                                                                        Layers
+                                                                        <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                                                                    </h1>
+                                                                    <!-- !!! HERE WILL GO THE CONTENT OF LAYERSWITCHER !!! -->
+                                                                    <div id="layers" class="layer-switcher"></div>
+                                                                </div>
+
+                                                                <div class="sidebar-pane" id="profile">
+                                                                    <h1 class="sidebar-header">
+                                                                        Profile<span class="sidebar-close">
+                                                                            <i class="fa fa-caret-left"></i>
+                                                                        </span>
+                                                                    </h1>
+                                                                </div>
+
+                                                                <div class="sidebar-pane" id="messages">
+                                                                    <h1 class="sidebar-header">
+                                                                        Messages<span class="sidebar-close">
+                                                                            <i class="fa fa-caret-left"></i>
+                                                                        </span>
+                                                                    </h1>
+                                                                </div>
+
+                                                                <div class="sidebar-pane" id="settings">
+                                                                    <h1 class="sidebar-header">
+                                                                        Settings<span class="sidebar-close">
+                                                                            <i class="fa fa-caret-left"></i>
+                                                                        </span>
+                                                                    </h1>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                       
+                                                        <!-- END OF SIDEBAR DIV -->
 
-                                                        <script src="Scripts/main.js"></script>
+                                                        <div id='map_openlayers' class="sidebar-map" style="height: 40rem; border: solid 1px #ddd; width: 100%;">
+                                                        </div>
+
+                                                        <script>
+                                                            // TEMP sidebar-v2 requires ol.inherits which was removed in ol v6.0
+                                                            if (window.ol && !window.ol.inherits) {
+                                                                ol.inherits = function inherits(childCtor, parentCtor) {
+                                                                    childCtor.prototype = Object.create(parentCtor.prototype);
+                                                                    childCtor.prototype.constructor = childCtor;
+                                                                };
+                                                            }
+                                                        </script>
+                                                        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,Object.assign,Event,URL"></script>
+                                                        <script src="https://openlayers.org/en/v6.1.1/build/ol.js"></script>
+                                                        <script src="https://rawgit.com/Turbo87/sidebar-v2/master/js/ol3-sidebar.js"></script>
+                                                        <script src="Style/ol-layerswitcher.js"></script>
+                                                        <script src="Style/sidebar.js"></script>
+
+
+
+                                                        <!--<script src="Scripts/main.js"></script>-->
                                                     </div>
 
 
