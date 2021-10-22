@@ -1,0 +1,12 @@
+﻿.leaflet-control 
+{
+     margin-top: 100px !important;
+}
+.leaflet-control  .leaflet-top {
+  /*  margin-top: 100px !important;*/
+   margin-top: 10px !important;
+}
+.leaflet-left  .leaflet-control {
+    float: left !important;
+}
+.leaflet-control-layers,.leaflet-control-fullscreen{ margin-top: 10px !important;}

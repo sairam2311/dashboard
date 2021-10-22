@@ -1,0 +1,766 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="css/adminlte.min.css" /> -->
+
+    <link rel="stylesheet" href="css/adminlte.css" />
+    <link rel="stylesheet" href="css/custom_style.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link href="Scripts/Krish-Multiselect.css" rel="stylesheet" />
+    <link href="css/CommonStyle.css" rel="stylesheet" />
+    <title>
+        || KWRIS ||
+    </title>
+    <link rel="stylesheet" href="leaflet/Search/leaflet.css" />
+    <script src="leaflet/Search/leaflet.js" type="text/javascript"></script>
+
+    <link href="leaflet/leaflet_custom.css" rel="stylesheet" type="text/css" />
+    <link href="leaflet/leaflet.fullscreen.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="leaflet/styledLayerControl.css" />
+    <link rel="stylesheet" href="leaflet/leaflet.zoomhome.css" />
+    <link rel="stylesheet" href="leaflet/MarkerCluster.css" />
+    <link rel="stylesheet" href="leaflet/MarkerCluster.Default.css" />
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+   
+    <script src="leaflet/Leaflet.fullscreen.js" type="text/javascript"></script>
+    <script src="leaflet/leaflet.groupedlayercontrol.min.js"></script>
+    <script src="leaflet/leaflet.zoomhome.min.js" type="text/javascript"></script>
+    <script src="Common_JS_CSS/comman.js" type="text/javascript"></script>
+    <script src="leaflet/leaflet.markercluster-src.js"></script>
+    <script src="leaflet/spin.min.js" charset="utf-8"></script>
+    <script src="leaflet/leaflet.spin.min.js" charset="utf-8"></script>
+    <script src="leaflet/L.Control.Locate.js"></script>
+    <script src="leaflet/leaflet-search.js"></script>
+    <link rel="stylesheet" href="leaflet/leaflet-search.css" />
+    <script src="leaflet/bundle.js"></script>
+    <link href="css/MasterCss.css" rel="stylesheet" />
+    <style>
+        body {
+            font-size: 16px;
+        }
+
+        .btnn.btnn-link {
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 3px 3px 3px 3px;
+            cursor: pointer;
+            border-radius: 18px;
+        }
+
+        .btnn {
+            background-color: DodgerBlue;
+            border: 1px solid;
+            color: white;
+            padding: 10px 10px 10px 10px;
+            cursor: pointer;
+            border-radius: 12px;
+            float: right;
+            text-decoration: none;
+            line-height: 22px !important;
+            margin-right: 3px !important;
+        }
+
+            .btnn:hover {
+                background-color: RoyalBlue;
+            }
+
+        .butt, .butt-1 {
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            border: 0px solid #ddd;
+            border-bottom-width: 0px;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(221, 221, 221);
+            border-radius: 4px;
+            position: absolute !important;
+            z-index: 401;
+            box-shadow: 1px 1px 2px #6D6D6D;
+            border-bottom: 1px solid #ccc;
+            padding: 0px;
+        }
+
+
+        .colpnl {
+            cursor: pointer;
+            color: #333333;
+        }
+
+            .colpnl:hover {
+                color: #08BFFB;
+            }
+
+        .colscolors {
+            color: #ccc !important;
+        }
+
+            .colscolors:hover {
+                color: #08BFFB !important;
+            }
+
+        .iconImg {
+            height: 26px;
+            margin: -10px;
+            margin-right: -10px;
+            margin-right: 5px;
+        }
+
+        .patty_panel-header {
+            float: left;
+            width: 100%;
+            height: auto;
+            background-color: #17556C;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            box-shadow: 0px 2px 4px #000;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            color: #fff;
+        }
+
+        .patty_panel-header {
+            line-height: 40px !important;
+            padding: 2px 11px 0px 10px !important;
+            height: 44px !important;
+        }
+
+        .patty_panel-header {
+            background: rgba(0, 0, 0, 0.77);
+            /* color: #333 !important; */
+            font-weight: 600;
+            box-shadow: 0px 1px 2px #545454;
+            border-left: 15px solid #1ea6b0;
+        }
+    </style>
+
+    <style type="text/css">
+        .btn-success, .btn-success:focus, .btn-success-1, .btn-success-1:focus {
+            background: #50b5e3 !important;
+            color: #fff !important;
+            padding: 8px 22px !important;
+            border-radius: 16px;
+            text-decoration: none;
+            box-shadow: 2px 3px 8px 4px #ccc !important;
+            border: 1px solid #b9b6b6;
+            line-height: 20px;
+            border-style: none;
+        }
+
+            .btn-success:after {
+                font-family: "FontAwesome";
+                content: "\f178";
+                display: inline-block;
+                padding-left: 10px;
+                vertical-align: middle;
+                font-weight: 900;
+            }
+
+            .btn-success-1:before {
+                font-family: "FontAwesome";
+                content: "\f177";
+                display: inline-block;
+                padding-right: 10px;
+                vertical-align: middle;
+                font-weight: 900;
+            }
+
+
+            .btn-success:hover, .btn-success-:hover {
+                box-shadow: 2px 0px 5px 2px #ccc !important;
+                border-style: none;
+                background-color: #50b5e3 !important;
+            }
+
+
+        div.dataTables_wrapper div.dataTables_filter label {
+            text-align: right;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="leaflet/Search/leaflet.css" />
+    <link rel="stylesheet" href="leaflet/leaflet.zoomhome.css" />
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="leaflet/Search/leaflet.js" type="text/javascript"></script>
+    <script src="leaflet/leaflet.zoomhome.min.js" type="text/javascript"></script>
+
+
+
+    <script src="leaflet/Leaflet.fullscreen.js" type="text/javascript"></script>
+    <script src="leaflet/leaflet.groupedlayercontrol.min.js"></script>
+    <script src="leaflet/leaflet.markercluster-src.js"></script>
+    <script src="leaflet/spin.min.js" charset="utf-8"></script>
+    <script src="leaflet/leaflet.spin.min.js" charset="utf-8"></script>
+    <script src="leaflet/L.Control.Locate.js"></script>
+    <script src="leaflet/leaflet-search.js"></script>
+
+    <script src="leaflet/bundle.js"></script>
+    <style type="text/css">
+
+        .wrapper .container-fluid {
+            z-index: 999;
+            bottom: -72px
+        }
+
+        .legendRF {
+            box-shadow: 1px 1px 2px #6D6D6D;
+            border: 1px solid #ccc;
+            z-index: 401;
+            position: absolute !important;
+            /*top: 160px;*/
+            left: 20px;
+            padding: 2px !important;
+            background-color: #fff !important;
+            bottom: 10px;
+            width: 90px;
+        }
+
+            .legendRF .header {
+                border-bottom: solid 1px #ddd;
+                background: #f5f5f5;
+                font-size: 14px !important;
+                padding: 2px 5px !important;
+            }
+
+            .legendRF hr {
+                margin-top: 1px !important;
+                margin-bottom: 2px !important;
+            }
+
+            .legendRF img {
+                height: 20px;
+                width: 20px;
+            }
+
+        .landing-box {
+            padding: 15px 15px;
+        }
+
+        leaflet-tooltip-left:before {
+            right: 0;
+            margin-right: -12px;
+            border-left-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .leaflet-tooltip-right:before {
+            left: 0;
+            margin-left: -12px;
+            border-right-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .leaflet-tooltip-own {
+            position: absolute;
+            padding: 4px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 0px solid #000;
+            color: #000;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+        }
+    </style>
+
+    <script src="Common_JS_CSS/comman.js" type="text/javascript"></script>
+    <script src="leaflet/bundle.js"></script>
+    <link href="css/MasterCss.css" rel="stylesheet" />
+
+    <style>
+        @media (min-width: 992px) {
+            .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .main-footer, .sidebar-mini.sidebar-collapse .main-header {
+                margin-left: 0px !important;
+            }
+
+            /* .sidebar-mini .wrapper {
+                left: -26px !important;
+            }*/
+
+            .sidebar-mini.sidebar-collapse .main-sidebar, .sidebar-mini.sidebar-collapse .main-sidebar::before {
+                margin-left: -26px !important;
+                width: 4.6rem;
+            }
+
+            .sidebar-mini .main-sidebar, .sidebar-mini .main-sidebar::before {
+                margin-left: -26px !important;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .content-wrapper::before, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-footer::before, body:not(.sidebar-mini-md) .main-header, body:not(.sidebar-mini-md) .main-header::before {
+                margin-left: -26px !important;
+            }
+
+            .m-panel-left {
+                left: 10px
+            }
+        }
+    </style>
+
+
+    <script>
+        $(document).on("keyup", '.searchInputkrishSelect', function () {
+            var searchTerm = $(this).val().toLowerCase();
+            $('.options .scrolableDiv li').each(function () {
+                var lineStr = $(this).text().toLowerCase();
+                if (lineStr.indexOf(searchTerm) === -1) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="https://kwris.azurewebsites.net/" id="aspnetForm">
+      
+
+
+
+
+
+        <div class="container-fluid">
+            <div class="row top-header-bg">
+                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-12 m-auto py-1">
+                    <div style="float: left; width: auto; height: auto;">
+                        <div style="float: left; width: auto; height: auto;">
+
+                            <select id="DDL_Lang" class="btn btn-primary btn-sm border-redius-0 m-0" onchange="SetLangaugeID();">
+                                <option value="1">English</option>
+                                <option value="2">ಕನ್ನಡ</option>
+                            </select>
+                        </div>
+                        <div class="top-font-size">
+                            <ul>
+                                <li><a href="#">-A</a></li>
+                                <li><a href="#">A</a></li>
+                                <li><a href="#">+A</a></li>
+                                <li><a class="non-act" href="#">A</a></li>
+                                <li><a class="non-active" href="#">A</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="float: right; width: auto; height: auto;">
+                        <div class="top-font-size float-right">
+                            <ul style="margin-top: 4px;">
+                                <li>
+                                    <a href="#" style="padding: 0px 10px;"><i class="fa fa-facebook-square fa-2x"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" style="padding: 0px 10px; border-left: 1px solid;"><i class="fa fa-twitter fa-2x"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row top2-header-bg py-1">
+                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-12 m-auto">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 py-1 div-hide">
+                            <h2 class="logo-k-fontsize mt-2">
+                                <span class="logo-k mr-2">T</span>RAC
+                            </h2>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 py-1 text-center">
+                            <div class="text-posi">
+                                <div style="float: left; width: 60px; height: 100%;">
+                                    <img src="https://telangana.gov.in/Style%20Library/GoT/Content/img/logo.png" style="height: 48px;">
+                                </div>
+                                <div class="logo_text">
+
+                                    <span class="sec_logo">Government of Telanagana</span>
+                                    <span class="sec_logo1">Planning Department</span>
+                                </div>
+                                <div class="togg_btn" style="float: left; width: 30px; height: 100%;">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 py-1 text-center div-hide">
+                            <!-- <div style="position: relative;left: 8%;"> -->
+                            <div style="float: left; width: 100%; height: 100%; text-align: left; padding-left: 5px; margin-top: 2px;">
+
+                                <span class="sec_logo2">
+                                    Telangana State Remote Sensing
+                                    <br>
+                                    Applications Centre (TRAC)
+                                </span>
+
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row top3-header-bg">
+                <div class="col-xl-11 col-lg-11 col-md-11 col-12 m-auto p-0">
+                    <nav class="navbar navbar-expand-md p-0">
+                        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                        <!-- <button class="navbar-toggler pl-3" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                          <i class="fa fa-bars"></i>
+                        </button> -->
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Index-2.html">HOME</a>
+                                </li>
+                                <!--<li class="nav-item">
+                                    <a class="nav-link" href="About.html">ABOUT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="KSWRMIP.html">KISWRMIP</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="NEWS.html">NEWS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="PublicSMS.html">SUBSCRIBE</a>
+                                </li>-->
+                            </ul>
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <div class="input-group" style="margin: 2px;">
+                                        <input type="text" class="form-control" placeholder="Search" style="background-color: #80A3E3; color: #fff;">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary border-radius-0 mb-0" type="button" style="padding: 0px 10px;">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+
+
+                                    <a class="nav-link btn btn-primary btn-sm bg-white border-radius-0 mb-0" href="Credentials.html" style="padding: 6px 15px; color: #2954a2 !important; margin-top: 2px;">Sign in</a>
+
+
+
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <!-- Navbar -->
+            <div class="content-wrapper" style="margin-left: 0px;">
+                <div class="content-header">
+                    <div class="container-fluid px-3">
+
+
+                        <div class="row">
+
+
+
+                         
+
+                            <div class="container-fluid">
+                                <div class="wrapper">
+
+
+                                    <div class="content-wrapper" style="margin-left: 0px;">
+                                        <div class="content-header">
+                                            <div class="container-fluid px-3">
+                                                <div class="row">
+                                                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 m-auto m-panel-left">
+
+                                                        <!--<h3 class="my-2" id="head_sel">KARNATAKA</h3>-->
+                                                        <div class="row">
+
+                                                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+
+                                                                <div class="row" id="scChrtRes">
+
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+
+                                                                <div id='map' style="height: 660px; border: solid 1px #ddd; width: 100%;">
+                                                                </div>
+
+                                                                <!--<label class="map-current-mode">Administrative map of Karnataka</label>-->
+                                                             
+
+
+                                                            </div>
+
+
+                                                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+
+                                                           
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid foot-posi">
+                <div class="row" id="contact" style="display: none;">
+                    <div class="col-xl-11 col-lg-11 col-md-11 col-sm-12 m-auto">
+                        <h3 id="ctl00_contacthead" class="w3ls-title">Contact</h3>
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 contact-footer">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="display: inline-flex;">
+                                        <a href="javascript:void(0)" onclick="GoogleMapAciwrm();" title="ACIWRM Location Map">
+                                            <span class="fa fa-map-marker" aria-hidden="true"></span>
+                                        </a>
+                                        <h6 id="ctl00_contacth">TRAC, Hyderabad</h6>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="display: inline-flex;">
+                                        <span class="fa fa-phone f-25" aria-hidden="true"></span>
+                                        <h6>
+                                            <!--080 222 620 42 /43/44/45-->
+                                        </h6>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="display: inline-flex;">
+                                        <span class="fa fa-location-arrow  f-25" aria-hidden="true"></span>
+                                        <h6>
+                                            <!--registrar[at]aciwrm[dot]org-->
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 contact-right-w3l contactCss" style="padding: 1em 2em 1rem 0rem;">
+
+                                <h2 class="m-10 text-center d-none" style="color: #2954a2; margin: -10px 0px 10px !important;">
+                                    <i class="glyphicon glyphicon-list-alt m-r-15"></i><span id="ctl00_writeus">WRITE TO US</span>
+                                </h2>
+                                <div class="col-sm-12 form-group">
+                                    <input name="ctl00$txt_FName" type="text" maxlength="30" id="ctl00_txt_FName" class="form-control" placeholder="Name" />
+
+                                </div>
+                                <div class="col-sm-12 form-group">
+                                    <input name="ctl00$txt_MobileNo" type="text" maxlength="10" id="ctl00_txt_MobileNo" class="form-control" placeholder="Mobile No." />
+
+                                </div>
+                                <div class="col-sm-12 form-group">
+                                    <input name="ctl00$txt_Email" type="text" maxlength="30" id="ctl00_txt_Email" class="form-control" placeholder="Email-ID" />
+
+                                </div>
+                                <div class="col-sm-12 form-group">
+                                    <input name="ctl00$txt_Subject" type="text" maxlength="50" id="ctl00_txt_Subject" class="form-control" placeholder="Subject" />
+
+                                </div>
+                                <div class="col-sm-12 form-group">
+                                    <textarea name="ctl00$txt_TextBody" rows="2" cols="20" id="ctl00_txt_TextBody" class="form-control" placeholder="Your Message" onkeypress="return textarea_Maxlenght_keypress(this,&#39;200&#39;,event)">
+</textarea>
+
+                                </div>
+                                <div class="col-sm-12 form-group">
+                                    <input type="submit" name="ctl00$Btn_ContactToUs" value="Submit" id="ctl00_Btn_ContactToUs" class="btn btn-success" />
+                                </div>
+
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 p-0">
+                                <div id="ctl00_id_contantD" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 p-0 contactCss"><h2 class='f-22 m-10 text-center d-none' style='color: #2954a2;'><i class='fa fa-phone m-r-15'></i>CONTACT DETAILS</h2><h4>Telangana State Remote Sensing Applications Centre (TRAC) -</h4><ul><li>
+    <strong>Address</strong>:&nbsp; Gananka Bhavan Premises,
+    Veer Nagar, Chintal Basti,
+    Khairatabad,
+    Hyderabad-500004
+</li><li><strong>Phone</strong>:&nbsp; +91-40-23324633</li><li><strong>Fax</strong>: +91-40-23324634</li><li><strong>E-mail</strong>:&nbsp;dgtrac[at]gmail[dot]com</li></ul>
+                                <!--<div style='margin-top: 5px; margin-bottom: 5px;' class='separator transparent'></div>
+                                <h4>Water Resources Department, Govt of Karnataka -</h4>
+                                <ul><li><strong>Address</strong>:&nbsp;Room No.305/306, 3rd Floor, Vikas Soudha, Bengaluru-560001</li><li><strong>Phone</strong>:&nbsp;+91-80-22255524, 22257064</li><li><strong>Email</strong>:&nbsp;prs-wr[at]karnataka[dot]gov[dot]in, secytech-wr[at]karnataka[dot]gov[dot]in</li></ul>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row py-2" style="background-color: #ccc;">
+
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <label class="mb-0">Email: kwris@aciwrm.org</label>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <label class="mb-0">&copy; <a class="text-primary" href="#">KWRIS.</a>All Rights Reserved</label>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 text-right"><a class="text-primary" href="javascript:void(0);" onclick="Toggles('contact',true);">Contact</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- REQUIRED SCRIPTS -->
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/adminlte.min.js"></script>
+        <script src="Scripts/Krish-Multiselect.js"></script>
+        <script type="text/javascript">
+            function GoogleMapAciwrm() {
+                var url = "https://www.google.co.in/maps/place/Advanced+Centre+for+Integrated+Water+Resources+Management+(ACIWRM)/@12.9912262,77.5975536,18z/data=!4m8!1m2!2m1!1sKSFC+Bhavan,+Thimmaiah+Road,+Near+Cantonment+Railway+Station!3m4!1s0x0:0x55525194880ce20f!8m2!3d12.991293!4d77.598178";
+                window.open(url, '_blank');
+            }
+
+
+            function Toggles(CtrlID, IsCtrlID) {
+                if (IsCtrlID == true) {
+                    $("[id$=" + CtrlID + "]").toggle(500);
+                }
+                else {
+                    $("." + CtrlID).toggle(500);
+                }
+            }
+            function hideProgress() {
+                $('.overlayWaitmadiv').hide();
+            }
+            function isDataLabels() {
+                $('.overlayWaitmadiv').show();
+            }
+            function SetLangaugeID11() {
+                $('.overlayWaitmadiv').show();
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    url: 'MasterBLogin.master/SetLangIDs',
+                    // data: { "ValidID": $("[id$=DDL_Lang]").val()},
+                    success: function (response) {
+                        $('.overlayWaitmadiv').hide();
+                    },
+                    error: function () {
+                        $('.overlayWaitmadiv').hide();
+                        alert("Error loading data! Please try again.");
+                        return false;
+                    }
+                });
+            }
+
+            function SetLangaugeID() {
+                debugger;
+                var obj = {
+                    ValidID: $("[id$=DDL_Lang]").val()
+                }
+                PageMethods.SetLangIDs(obj, function (r) {
+                    //success
+                }, function (err) {
+                    //failure
+                });
+                //debugger;
+                //var ValidID = $("[id$=DDL_Lang]").val();
+                //PageMethods.SetLangIDs(ValidID, OnSucceeded, OnFailed);
+
+            }
+            function OnSucceeded(result, userContext, methodName) {
+                return;
+            }
+            function OnFailed(error, userContext, methodName) {
+                return;
+            }
+            if (typeof (Sys) !== "undefined") { Sys.Application.notifyScriptLoaded(); }
+        </script>
+        <script>
+            $(document).ready(function () {
+                $("[data-toggle='tab']").click(function () {
+                    var tabs = $(this).attr('data-tabs');
+                    var tab = $(this).attr("data-tab");
+                    $(tabs).find(".gtab").removeClass("active");
+                    $(tabs).find(tab).addClass("active");
+
+                });
+                $('.nav_path a ').click(function () {
+                    $('.main-sidebar').addClass('active');
+                    $(this).parents('body').removeClass('sidebar-collapse');
+                });
+
+                $('#close-lt').unbind().click(function () {
+                    $(this).parents('body').addClass('sidebar-collapse');
+                });
+
+
+
+                $('.menu-tb a').click(function () {
+                    $('.menu-tb a').removeClass('active');
+                    $(this).addClass('active');
+                });
+
+                $('.last-close').click(function () {
+                    $(this).parents('.gtab').removeClass('active');
+                });
+
+                $('label').click(function () {
+                    $(this).parent('li').children('.m-menu').addClass('active')
+                });
+
+
+                $('svg').click(function () {
+                    $(this).parent('.m-menu__header').parent('.m-menu').removeClass('active');
+                });
+                $('.nav-item').click(function () {
+                    if (!$(this).parents('body').hasClass('sidebar-collapse')) {
+                        $('.m-menu ').removeClass('active');
+                    }
+
+                });
+
+                $('.main-sidebar').mouseleave(function () {
+                    if ($(this).parents('body').hasClass('sidebar-collapse')) {
+                        $('.m-menu ').removeClass('active');
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#filter-wrap').click(function () {
+                    $('.filter_warper-hide').toggle(500)
+                });
+                $('#change-icons').click(function () {
+                    $('.fa-bars').toggleClass('fa-times fa-x2')
+                })
+
+            })
+        </script>
+
+
+
+       
+    </form>
+</body>
+
+<!-- Mirrored from kwris.azurewebsites.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Oct 2021 05:32:35 GMT -->
+</html>
