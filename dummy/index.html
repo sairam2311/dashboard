@@ -1,0 +1,1455 @@
+
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from kwris.azurewebsites.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Oct 2021 05:32:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="css/adminlte.min.css" /> -->
+
+    <link rel="stylesheet" href="css/adminlte.css" /><link rel="stylesheet" href="css/custom_style.css" /><link rel="stylesheet" href="css/font-awesome.min.css" /><link href="Scripts/Krish-Multiselect.css" rel="stylesheet" /><link href="css/CommonStyle.css" rel="stylesheet" /><title>
+	|| KWRIS ||
+</title><link rel="stylesheet" href="leaflet/Search/leaflet.css" />
+    <script src="leaflet/Search/leaflet.js" type="text/javascript"></script>
+
+    <link href="leaflet/leaflet_custom.css" rel="stylesheet" type="text/css" /><link href="leaflet/leaflet.fullscreen.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" href="leaflet/styledLayerControl.css" /><link rel="stylesheet" href="leaflet/leaflet.zoomhome.css" /><link rel="stylesheet" href="leaflet/MarkerCluster.css" /><link rel="stylesheet" href="leaflet/MarkerCluster.Default.css" />
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="FusionCharts/FusionCharts.js" type="text/javascript"></script>
+    <script src="leaflet/Leaflet.fullscreen.js" type="text/javascript"></script>
+    <script src="leaflet/leaflet.groupedlayercontrol.min.js"></script>
+    <script src="leaflet/leaflet.zoomhome.min.js" type="text/javascript"></script>
+    <script src="Common_JS_CSS/comman.js" type="text/javascript"></script>
+    <script src="leaflet/leaflet.markercluster-src.js"></script>
+    <script src="leaflet/spin.min.js" charset="utf-8"></script>
+    <script src="leaflet/leaflet.spin.min.js" charset="utf-8"></script>
+    <script src="leaflet/L.Control.Locate.js"></script>
+    <script src="leaflet/leaflet-search.js"></script>
+    <link rel="stylesheet" href="leaflet/leaflet-search.css" />
+    <script src="leaflet/bundle.js"></script>
+    <link href="css/MasterCss.css" rel="stylesheet" />
+    <style>
+        body {
+            font-size: 16px;
+        }
+
+        .btnn.btnn-link {
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 3px 3px 3px 3px;
+            cursor: pointer;
+            border-radius: 18px;
+        }
+
+        .btnn {
+            background-color: DodgerBlue;
+            border: 1px solid;
+            color: white;
+            padding: 10px 10px 10px 10px;
+            cursor: pointer;
+            border-radius: 12px;
+            float: right;
+            text-decoration: none;
+            line-height: 22px !important;
+            margin-right: 3px !important;
+        }
+
+            .btnn:hover {
+                background-color: RoyalBlue;
+            }
+
+        .butt, .butt-1 {
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            border: 0px solid #ddd;
+            border-bottom-width: 0px;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(221, 221, 221);
+            border-radius: 4px;
+            position: absolute !important;
+            z-index: 401;
+            box-shadow: 1px 1px 2px #6D6D6D;
+            border-bottom: 1px solid #ccc;
+            padding: 0px;
+        }
+
+
+        .colpnl {
+            cursor: pointer;
+            color: #333333;
+        }
+
+            .colpnl:hover {
+                color: #08BFFB;
+            }
+
+        .colscolors {
+            color: #ccc !important;
+        }
+
+            .colscolors:hover {
+                color: #08BFFB !important;
+            }
+
+        .iconImg {
+            height: 26px;
+            margin: -10px;
+            margin-right: -10px;
+            margin-right: 5px;
+        }
+
+        .patty_panel-header {
+            float: left;
+            width: 100%;
+            height: auto;
+            background-color: #17556C;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            box-shadow: 0px 2px 4px #000;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            color: #fff;
+        }
+
+        .patty_panel-header {
+            line-height: 40px !important;
+            padding: 2px 11px 0px 10px !important;
+            height: 44px !important;
+        }
+
+        .patty_panel-header {
+            background: rgba(0, 0, 0, 0.77);
+            /* color: #333 !important; */
+            font-weight: 600;
+            box-shadow: 0px 1px 2px #545454;
+            border-left: 15px solid #1ea6b0;
+        }
+    </style>
+
+    <style type="text/css">
+        .btn-success, .btn-success:focus, .btn-success-1, .btn-success-1:focus {
+            background: #50b5e3 !important;
+            color: #fff !important;
+            padding: 8px 22px !important;
+            border-radius: 16px;
+            text-decoration: none;
+            box-shadow: 2px 3px 8px 4px #ccc !important;
+            border: 1px solid #b9b6b6;
+            line-height: 20px;
+            border-style: none;
+        }
+
+            .btn-success:after {
+                font-family: "FontAwesome";
+                content: "\f178";
+                display: inline-block;
+                padding-left: 10px;
+                vertical-align: middle;
+                font-weight: 900;
+            }
+
+            .btn-success-1:before {
+                font-family: "FontAwesome";
+                content: "\f177";
+                display: inline-block;
+                padding-right: 10px;
+                vertical-align: middle;
+                font-weight: 900;
+            }
+
+
+            .btn-success:hover, .btn-success-:hover {
+                box-shadow: 2px 0px 5px 2px #ccc !important;
+                border-style: none;
+                background-color: #50b5e3 !important;
+            }
+
+
+        div.dataTables_wrapper div.dataTables_filter label {
+            text-align: right;
+        }
+    </style>
+
+    
+    <link rel="stylesheet" href="leaflet/Search/leaflet.css" />
+    <link rel="stylesheet" href="leaflet/leaflet.zoomhome.css" />
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="leaflet/Search/leaflet.js" type="text/javascript"></script>
+    <script src="leaflet/leaflet.zoomhome.min.js" type="text/javascript"></script>
+
+
+
+    <script src="leaflet/Leaflet.fullscreen.js" type="text/javascript"></script>
+    <script src="leaflet/leaflet.groupedlayercontrol.min.js"></script>
+    <script src="leaflet/leaflet.markercluster-src.js"></script>
+    <script src="leaflet/spin.min.js" charset="utf-8"></script>
+    <script src="leaflet/leaflet.spin.min.js" charset="utf-8"></script>
+    <script src="leaflet/L.Control.Locate.js"></script>
+    <script src="leaflet/leaflet-search.js"></script>
+
+    <script src="leaflet/bundle.js"></script>
+    <style type="text/css">
+
+       .wrapper .container-fluid{z-index:999; bottom:-72px} 
+
+        .legendRF {
+            box-shadow: 1px 1px 2px #6D6D6D;
+            border: 1px solid #ccc;
+            z-index: 401;
+            position: absolute !important;
+            /*top: 160px;*/
+            left: 20px;
+            padding: 2px !important;
+            background-color: #fff !important;
+            bottom: 10px;
+            width: 90px;
+        }
+
+            .legendRF .header {
+                border-bottom: solid 1px #ddd;
+                background: #f5f5f5;
+                font-size: 14px !important;
+                padding: 2px 5px !important;
+            }
+
+            .legendRF hr {
+                margin-top: 1px !important;
+                margin-bottom: 2px !important;
+            }
+
+            .legendRF img {
+                height: 20px;
+                width: 20px;
+            }
+
+        .landing-box {
+            padding: 15px 15px;
+        }
+
+        leaflet-tooltip-left:before {
+            right: 0;
+            margin-right: -12px;
+            border-left-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .leaflet-tooltip-right:before {
+            left: 0;
+            margin-left: -12px;
+            border-right-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .leaflet-tooltip-own {
+            position: absolute;
+            padding: 4px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 0px solid #000;
+            color: #000;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+        }
+    </style>
+
+    <script src="Common_JS_CSS/comman.js" type="text/javascript"></script>
+    <script src="leaflet/bundle.js"></script>
+    <link href="css/MasterCss.css" rel="stylesheet" />
+
+    <style>
+        @media (min-width: 992px) {
+            .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .main-footer, .sidebar-mini.sidebar-collapse .main-header {
+                margin-left: 0px !important;
+            }
+
+           /* .sidebar-mini .wrapper {
+                left: -26px !important;
+            }*/
+
+            .sidebar-mini.sidebar-collapse .main-sidebar, .sidebar-mini.sidebar-collapse .main-sidebar::before {
+                margin-left: -26px !important;
+                width: 4.6rem;
+            }
+
+            .sidebar-mini .main-sidebar, .sidebar-mini .main-sidebar::before {
+                margin-left: -26px !important;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .content-wrapper::before, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-footer::before, body:not(.sidebar-mini-md) .main-header, body:not(.sidebar-mini-md) .main-header::before {
+                margin-left: -26px !important;
+            }
+            .m-panel-left{left:10px}
+        }
+    </style>
+
+
+    <script>
+        $(document).on("keyup", '.searchInputkrishSelect', function () {
+            var searchTerm = $(this).val().toLowerCase();
+            $('.options .scrolableDiv li').each(function () {
+                var lineStr = $(this).text().toLowerCase();
+                if (lineStr.indexOf(searchTerm) === -1) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+        
+
+        });
+    </script>
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="https://kwris.azurewebsites.net/" id="aspnetForm">
+<div>
+<input type="hidden" name="ctl00_ToolkitManagerACWIRM_HiddenField" id="ctl00_ToolkitManagerACWIRM_HiddenField" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="WebResource0057.js?d=pynGkmcFUV13He1Qd6_TZBtcjD247FTiGE3-DIu4XocKG-yUM3o2h91iAbDYtr49yCeEZ2RifT0BL5pg1FmqpQ2&amp;t=637454070340000000" type="text/javascript"></script>
+
+
+<script src="ScriptResource34fc.js?d=x6wALODbMJK5e0eRC_p1LSf09zSJYoUs5T-QEaT3p7832gwXcYubioCd-J8mCdqbcIQcpsiCbQvF_LKVeRVX45aj2PFmZ3psRsb19qgdCLXfSlqLKKg5EnIdTg4bMp8B0&amp;t=ffffffffecf8d3f2" type="text/javascript"></script>
+<script src="ScriptResource02be.js?d=P5lTttoqSeZXoYRLQMIScD2eDEl_Hg5DRRQ1XwsWrikodBfeZigrQa67CLaY_V2X6P6bw010MbCUc8jqW4Sj6QprO7n3ct9a0BEf11ZTkE2ge7KEVE6vB1KejNUgzyEl0&amp;t=ffffffffecf8d3f2" type="text/javascript"></script>
+<script src="Fusionmaps/updatepanelhook.fusioncharts.js" type="text/javascript"></script>
+<script src="Indexbe9e.js?_TSM_HiddenField_=ctl00_ToolkitManagerACWIRM_HiddenField&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d3.5.7.123%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3a5a4df314-b4a2-4da2-a207-9284f1b1e96c%3ade1feab2%3af9cec9bc%3a8ad18101" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var PageMethods = function() {
+PageMethods.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+PageMethods.prototype = {
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return PageMethods._staticInstance.get_path();},
+Visitor:function(type,code,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'Visitor',false,{type:type,code:code},succeededCallback,failedCallback,userContext); }}
+PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
+PageMethods._staticInstance = new PageMethods();
+PageMethods.set_path = function(value) { PageMethods._staticInstance.set_path(value); }
+PageMethods.get_path = function() { return PageMethods._staticInstance.get_path(); }
+PageMethods.set_timeout = function(value) { PageMethods._staticInstance.set_timeout(value); }
+PageMethods.get_timeout = function() { return PageMethods._staticInstance.get_timeout(); }
+PageMethods.set_defaultUserContext = function(value) { PageMethods._staticInstance.set_defaultUserContext(value); }
+PageMethods.get_defaultUserContext = function() { return PageMethods._staticInstance.get_defaultUserContext(); }
+PageMethods.set_defaultSucceededCallback = function(value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
+PageMethods.get_defaultSucceededCallback = function() { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
+PageMethods.set_defaultFailedCallback = function(value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
+PageMethods.get_defaultFailedCallback = function() { return PageMethods._staticInstance.get_defaultFailedCallback(); }
+PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
+PageMethods.get_enableJsonp = function() { return PageMethods._staticInstance.get_enableJsonp(); }
+PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
+PageMethods.get_jsonpCallbackParameter = function() { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
+PageMethods.set_path("Index.aspx");
+PageMethods.Visitor= function(type,code,onSuccess,onFailed,userContext) {PageMethods._staticInstance.Visitor(type,code,onSuccess,onFailed,userContext); }
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90059987" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="gy2vpJ/iFR1HslkXykirTCQVtkoYByeC0Gedmx862niGEjan+AIi2EJDKYsVt6E5JSGUNfJBNzUASBqUofnRS8lM4fOJ8gz148gFcnW64yGIjdql2TW7/lan+75dKF2x91okFSeDNk36LkHjyKV3629zCsLtQ5KgCamYNTNrJjdxyNLj2j+20LDUFLk9KMwgXPaFR/2N0HxvwnzwjvqzGsusR32v3J9AOmJYdsAVhlU=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ToolkitManagerACWIRM', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+        
+        <div class="container-fluid">
+            <div class="row top-header-bg">
+                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-12 m-auto py-1">
+                    <div style="float: left; width: auto; height: auto;">
+                        <div style="float: left; width: auto; height: auto;">
+                            
+                            <select id="DDL_Lang" class="btn btn-primary btn-sm border-redius-0 m-0" onchange="SetLangaugeID();">
+                                <option value="1">English</option>
+                                <option value="2">ಕನ್ನಡ</option>
+                            </select>
+                        </div>
+                        <div class="top-font-size">
+                            <ul>
+                                <li><a href="#">-A</a></li>
+                                <li><a href="#">A</a></li>
+                                <li><a href="#">+A</a></li>
+                                <li><a class="non-act" href="#">A</a></li>
+                                <li><a class="non-active" href="#">A</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="float: right; width: auto; height: auto;">
+                        <div class="top-font-size float-right">
+                            <ul style="margin-top: 4px;">
+                                <li>
+                                    <a href="#" style="padding: 0px 10px;"><i class="fa fa-facebook-square fa-2x"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" style="padding: 0px 10px; border-left: 1px solid;"><i class="fa fa-twitter fa-2x"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row top2-header-bg py-1">
+                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-12 m-auto">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 py-1 div-hide">
+                            <h2 class="logo-k-fontsize mt-2">
+                                <span class="logo-k mr-2">K</span>WRIS
+                            </h2>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 py-1 text-center">
+                            <div class="text-posi">
+                                <div style="float: left; width: 60px; height: 100%;">
+                                    <img src="images/unnamed%202.png" style="height: 48px;">
+                                </div>
+                                <div class="logo_text">
+
+                                    <span class="sec_logo">Government of Karnataka</span>
+                                    <span class="sec_logo1">Water Resources Department</span>
+                                </div>
+                                <div class="togg_btn" style="float: left; width: 30px; height: 100%;">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 py-1 text-center div-hide">
+                            <!-- <div style="position: relative;left: 8%;"> -->
+                            <div style="float: left; width: 100%; height: 100%; text-align: left; padding-left: 5px; margin-top: 2px;">
+
+                                <span class="sec_logo2">Advanced Center for Integrated
+                                        <br>
+                                    Water Resources Management</span>
+
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row top3-header-bg">
+                <div class="col-xl-11 col-lg-11 col-md-11 col-12 m-auto p-0">
+                    <nav class="navbar navbar-expand-md p-0">
+                        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                        <!-- <button class="navbar-toggler pl-3" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <i class="fa fa-bars"></i>
+                </button> -->
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Index-2.html">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="About.html">ABOUT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="KSWRMIP.html">KISWRMIP</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="NEWS.html">NEWS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="PublicSMS.html">SUBSCRIBE</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <div class="input-group" style="margin: 2px;">
+                                        <input type="text" class="form-control" placeholder="Search" style="background-color: #80A3E3; color: #fff;">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary border-radius-0 mb-0" type="button" style="padding: 0px 10px;">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+
+                                    
+                                    <a class="nav-link btn btn-primary btn-sm bg-white border-radius-0 mb-0" href="Credentials.html" style="padding: 6px 15px; color: #2954a2 !important; margin-top: 2px;">Sign in</a>
+
+                                    
+
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <!-- Navbar -->
+            <div class="content-wrapper" style="margin-left: 0px;">                
+                <div class="content-header">
+                    <div class="container-fluid px-3">
+
+                       
+                                <div class="row">
+
+                                    
+
+    <script type="text/javascript" id="HighligtMenus">
+
+        $(document).ready(function () {
+            load_tiles(1, 0);
+        });
+
+        function load_tiles(type, cod) {
+
+            var objvr = {};
+            objvr.type = type;
+            objvr.code = cod;
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                url: 'Index.aspx/Visitor',
+                data: JSON.stringify(objvr),
+                success: function (response) {
+
+                    if ((response.d).length > 0) {
+                        var scrpt = response.d;
+                        $("#scChrtRes").html(scrpt);
+                        return false;
+                    }
+                }
+            });
+
+        }
+
+
+        function SetAcive_Toggle(SelectdVal) {
+
+
+
+
+            Show_Hide_Boundaries_Layers(SelectdVal);
+            //  showHideDives_Radio();
+            //Show_TopFilterDivs();
+        }
+        function Show_Hide_Boundaries_Layers(SelectdVal) {
+            if (SelectdVal == "2") {
+                $('.admn-bndry').show(); $('.Hydro-bndry').hide();
+                $('.map-current-mode').text("Hydrological map of Karnataka");
+                map.removeLayer(DistLyr);
+                basin.addTo(map);
+
+            }
+            else if (SelectdVal == "1") {
+                $('.Hydro-bndry').show(); $('.admn-bndry').hide();
+                $('.map-current-mode').text("Administrative map of Karnataka");
+                map.removeLayer(basin);
+                DistLyr.addTo(map);
+            }
+        }
+        function Show_TopFilterDivs() {
+            $('.filter_warper-hide').show(500);
+        }
+    </script>
+
+    <div class="container-fluid">
+        <div class="wrapper">
+
+            
+            <div class="content-wrapper" style="margin-left: 0px;">
+                <div class="content-header">
+                    <div class="container-fluid px-3">
+                        <div class="row">
+                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 m-auto m-panel-left">
+
+                                <h3 class="my-2" id="head_sel">KARNATAKA</h3>
+                                <div class="row">
+
+                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+
+                                        <div class="row" id="scChrtRes">
+
+
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                        
+                                        <div id='map' style="height: 660px; border: solid 1px #ddd; width: 100%;">
+                                        </div>
+
+                                        <label class="map-current-mode">Administrative map of Karnataka</label>
+                                        <div class="Map-bound-Toggel">
+                                            <a href="javascript:void(0);" class="admn-bndry" style="display: none" title="Admin Boundary">
+                                                <img src="Icons/vidhan.png" alt="Admin Boundary" class="img-active" onclick="SetAcive_Toggle('1')" />
+                                            </a>
+                                            <a href="javascript:void(0);" class="Hydro-bndry" title="Hydro Boundary">
+                                                <img src="Icons/hydro.png" alt="Hydro Boundary" class="img-active" onclick="SetAcive_Toggle('2')" />
+                                            </a>
+                                        </div>
+                                        <script type="text/javascript">
+
+
+
+                                            var mapOptions = { center: [15.0, 76.2], zoom: 7, maxZoom: 12, minZoom: 6.5, zoomSnap: 0.97, fullscreenControl: { pseudoFullscreen: false }, zoomControl: false, zoomsliderControl: true, scrollWheelZoom: false, };
+                                            var map = L.map('map', mapOptions);
+
+                                            var outdoors = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                                                maxZoom: 14,
+
+                                                id: 'mapbox/outdoors-v11',
+                                                tileSize: 512,
+                                                zoomOffset: -1
+                                            }).addTo(map);
+
+
+
+
+
+                                            var zoomHome = L.Control.zoomHome({ position: 'topleft' });
+                                            zoomHome.addTo(map); map.setZoom(6.5199);
+                                            var wcJsnUrls1 = 'https://kwris.aciwrm.org:8443/geoserver/KA/ows?service=WFS##version=1.0.0##request=GetFeature##typeName=KA:';
+                                            var wcJsnUrls2 = '##maxFeatures=50000##outputFormat=application%2Fjson';
+                                            var WMSPngIMGURL = 'https://kwris.aciwrm.org:8443/geoserver/KA/wms?';
+                                            L.tileLayer.wms('' + WMSPngIMGURL + '', { layers: 'KA:State', transparent: true, format: 'image/png', tiled: true, fillOpacity: 0.3 }).addTo(map);
+
+                                            // control that shows state info on hover
+
+
+
+
+
+                                            // get color depending on population density value
+                                            function getColor(d) {
+                                                return '#ffffff00';
+                                            }
+
+                                            function style(feature) {
+                                                return {
+                                                    weight: 2,
+                                                    opacity: 1,
+                                                    color: '#769cf5',
+                                                    //dashArray: '3',
+                                                    fillOpacity: 0.7,
+                                                    fillColor: getColor(feature.properties.DistrictCode)
+                                                };
+                                            }
+
+                                            function highlightFeature(e) {
+                                                //var layer = e.target;
+
+                                                //layer.setStyle({
+                                                //    weight: 4,
+                                                //    color: '#FF0000',
+                                                //    dashArray: '',
+                                                //    fillOpacity: 0.4,
+                                                //    fillColor: '#D3D3D3',
+
+                                                //});
+
+
+
+                                                //this.openPopup();
+
+                                                //info.update(layer.feature.properties);
+                                            }
+
+                                            var geojson;
+
+                                            function resetHighlight(e) {
+
+
+
+                                                //var layer = e.target;
+
+
+                                                //var array = layer.feature.id.split(/\.(?=[^\.]+$)/);
+                                                //var layerid = array[0];
+
+                                                //if (layerid == 'geomGIS_District') {
+                                                //    DistLyr.resetStyle(this);
+                                                //}
+
+                                                //if (layerid == 'geomGIS_Basin') {
+                                                //    basin.resetStyle(this);
+                                                //}
+
+                                                //this.closePopup();
+                                                //wmsLayer3.resetStyle(e.target);
+                                                //info.update();
+                                            }
+
+                                            var lastClickedLayer;
+                                            function zoomToFeature(e) {
+
+                                                debugger;
+
+
+
+                                                if (lastClickedLayer) {
+                                                    DistLyr.resetStyle(lastClickedLayer);
+                                                }
+                                                var layer = e.target;
+
+
+                                                //map.fitBounds(e.target.getBounds());
+                                                layer.setStyle({
+                                                    weight: 2,
+                                                    //color: '#00000',
+                                                    dashArray: '',
+                                                    fillOpacity: 0.4,
+                                                    fillColor: '#769cf5'
+                                                });
+
+                                                lastClickedLayer = layer;
+                                                var array = layer.feature.id.split(/\.(?=[^\.]+$)/);
+                                                var layerid = array[0];
+
+                                                if (layerid == 'geomGIS_District') {
+                                                    var code = layer.feature.properties.DistrictCode;
+                                                    var name = layer.feature.properties.Name;
+
+                                                    $('#head_sel').html(name + " District");
+
+                                                    load_tiles(1, code);
+
+
+
+                                                }
+                                                if (layerid == 'geomGIS_Basin') {
+
+                                                    var code = layer.feature.properties.BasinID;
+                                                    var name = layer.feature.properties.Name;
+
+                                                    $('#head_sel').html(name + " Basin");
+                                                    load_tiles(2, code);
+                                                }
+
+                                            }
+
+                                            function resetStyle(e) {
+                                                DistLyr.resetStyle(e.target);
+                                                //info.update();
+                                            }
+
+                                            function onEachFeature(feature, layer) {
+
+
+
+                                                //layer.bindTooltip(feature.properties.Name, { closeButton: false, offset: L.point(0, -20), permanent: false });
+
+                                                layer.bindTooltip("<div style='background:white; padding:1px 3px 1px 3px'><b>" + feature.properties.Name + "</b></div>",
+                                                    {
+                                                        direction: 'right',
+                                                        permanent: false,
+                                                        sticky: true,
+                                                        offset: [10, 0],
+                                                        opacity: 0.75,
+                                                        className: 'leaflet-tooltip-own'
+                                                    });
+
+                                                layer.on({
+                                                    mouseover: highlightFeature,
+                                                    mouseout: resetHighlight,
+                                                    preclick: resetStyle,
+                                                    click: zoomToFeature
+                                                });
+                                            }
+
+                                            function onEachFeatureDist(feature, layer) {
+                                                layer.on({
+                                                    mouseover: highlightFeature,
+                                                    mouseout: resetHighlight,
+                                                    preclick: resetStyle,
+                                                    click: zoomToFeature
+                                                });
+                                                //console.log(map.getZoom());
+                                                if (map.getZoom() < 10 || map.getZoom() > 8) {
+                                                    var label = L.marker(layer.getBounds().getCenter(), {
+                                                        icon: L.divIcon({
+
+                                                            html: '',
+                                                            iconSize: [0, 0]
+                                                        })
+                                                    }).addTo(map);
+                                                    label.bindTooltip(
+                                                        feature.properties.Name,
+                                                        {
+                                                            permanent: true,
+                                                            direction: 'center',
+                                                            className: 'countryLabel'
+                                                        }
+                                                    );
+                                                }
+                                            }
+                                            // var wmsLayer3 = "";
+
+
+
+                                            var DistLyr = new L.geoJson(null, { style: style, onEachFeature: onEachFeature }).addTo(map);
+                                            var DistUrl = 'https://kwris.aciwrm.org:8443/geoserver/KA/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=KA%3AgeomGIS_District&amp;maxFeatures=5000&amp;outputFormat=application%2Fjson';
+                                            DistLyr.fire('data:loading');
+                                            $.ajax({ url: DistUrl, dataType: 'json', success: loadGeoDis });
+                                            function loadGeoDis(data) { DistLyr.fire('data:loaded'); DistLyr.addData(data); };
+
+
+                                            var basin = new L.geoJson(null, { style: style, onEachFeature: onEachFeature });
+                                            var basinUrl = 'https://kwris.aciwrm.org:8443/geoserver/KA/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=KA%3AgeomGIS_Basin&amp;maxFeatures=5000&amp;outputFormat=application%2Fjson';
+                                            $.ajax({ url: basinUrl, dataType: 'json', success: loadGeobasin });
+                                            function loadGeobasin(data) { basin.addData(data); };
+
+
+
+
+
+
+
+                                            //map.spin(true);
+
+
+
+
+                                            var baseMaps = {
+
+                                                /*"Grayscale": grayscale,*/
+                                                "Terrain": outdoors
+                                                /*"Streets": streets*/
+
+                                            };
+
+                                            var overlayMaps = {
+                                                //"Deviation - District": wmsLayer4,
+                                                //"Deviation - Taluk": wmsLayer3,
+                                                "Boundary Layers": {
+                                                    "District": DistLyr,
+
+                                                    "Basin": basin,
+
+
+                                                }
+                                            };
+
+                                            var options = {
+                                                // Make the "Landmarks" group exclusive (use radio inputs)
+                                                exclusiveGroups: ["Boundary Layers"],
+                                                // Show a checkbox next to non-exclusive group labels for toggling all
+                                                groupCheckboxes: true,
+                                                position: 'topleft'
+                                            };
+
+                                            var layerControl = L.control.groupedLayers(baseMaps, overlayMaps, options);
+                                            map.addControl(layerControl);
+
+                                            function getColors(category) {
+                                                //var rr = e.properties.Deviation;
+                                                return (category == 'Positive' ? 'green' : category == 'Negative' ? 'red' : 'green')
+                                            }
+
+
+                                            ///locatio
+                                            lc = L.control.locate({
+                                                strings: {
+                                                    title: "Show me where I am!"
+                                                }
+                                            }).addTo(map);
+
+
+
+                                            ///print
+
+                                            var printer = L.easyPrint({
+                                                tileLayer: outdoors,
+                                                sizeModes: ['Current', 'A4Landscape', 'A4Portrait'],
+                                                filename: 'myMap',
+                                                exportOnly: true,
+                                                hideControlContainer: true
+                                            }).addTo(map);
+
+                                        </script>
+
+                                        
+                                    </div>
+
+
+                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+
+                                        <span id="ctl00_ContentPlaceHolder1_lblCount" class="pull-left" style="color: #fff; font-size: 25px; margin-right: 100px; padding: 0px 10px; background-color: #000;">37574</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        <script>
+            $(document).ready(function () {
+                $("[data-toggle='tab']").click(function () {
+                    var tabs = $(this).attr('data-tabs');
+                    var tab = $(this).attr("data-tab");
+                    $(tabs).find(".gtab").removeClass("active");
+                    $(tabs).find(tab).addClass("active");
+                });
+                //$('.nav_path a').click(function () {
+                //    $('.main-sidebar').addClass('active');
+                //    $(this).parents('body').removeClass('sidebar-collapse');
+                //});
+
+                $('#close-lt').unbind().click(function () {
+                    $(this).parents('body').addClass('sidebar-collapse');
+                });
+
+                $('.menu-tb a').click(function () {
+                    $('.menu-tb a').removeClass('active');
+                    $(this).addClass('active');
+                });
+
+                $('.last-close').click(function () {
+                    $(this).parents('.gtab').removeClass('active');
+                });
+
+                $('label').click(function () {
+                    $(this).parent('li').children('.m-menu').addClass('active')
+                });
+
+
+                $('svg').click(function () {
+                    $(this).parent('.m-menu__header').parent('.m-menu').removeClass('active');
+                });
+                $('.nav-item').click(function () {
+                    if (!$(this).parents('body').hasClass('sidebar-collapse')) {
+                        $('.m-menu ').removeClass('active');
+                    }
+
+                });
+
+                $('.main-sidebar').mouseleave(function () {
+                    if ($(this).parents('body').hasClass('sidebar-collapse')) {
+                        $('.m-menu ').removeClass('active');
+                    }
+                });
+            });
+
+            function Open_NavPathLink() {
+                $('.nav_path a').click(function () {
+                    var tabs = $(this).attr('data-tabs');
+                    var tab = $(this).attr("data-tab");
+                    if (tab != "" && tab != null && tab != undefined) {
+                        $('.main-sidebar').addClass('active');
+                        $(this).parents('body').removeClass('sidebar-collapse');
+
+                        $(tabs).find(tab).addClass("active");
+                        $(tabs).find(tab).find(".m-menu__header i, .m-menu__header svg").css("display", "block");
+                        if ($("#Mainchange-icons i").hasClass("fa-list")) {
+                            $("#Mainchange-icons i").removeClass("fa-list");
+                            $("#Mainchange-icons i").addClass('fa-times icons-i-fnt')
+                        }
+                    }
+                });
+
+            }
+        </script>
+        <script>
+            $(document).ready(function () {
+                Set_ClickEvent();
+                // $("#change-icons").on("click", function () {
+                // $("#Mainchange-iconss").live('click', function (e) {
+                $("#Mainchange-icons").click(function () {
+                    if ($("#Mainchange-icons i").hasClass("fa-list")) {
+                        $("#Mainchange-icons i").removeClass("fa-list");
+                        $("#Mainchange-icons i").addClass('fa-times icons-i-fnt')
+                    }
+                    else {
+                        $("#Mainchange-icons i").addClass("fa-list");
+                        $("#Mainchange-icons i").removeClass('fa-times icons-i-fnt')
+                    }
+                });
+            });
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function (evt, args) {
+                Set_ClickEvent();
+                SetToggleTopFilter();
+            });
+
+            function SetToggleTopFilter() {
+                if ($("[id$=TopFltrTglSts]").val() == "false") {
+                    $('.filter_warper-hide').show(500)
+                }
+            }
+
+            function Set_ClickEvent() {
+                $('#filter-wrap').click(function () {
+                    $('.filter_warper-hide').toggle(500);
+                    setTimeout(function () {
+                        $("[id$=TopFltrTglSts]").val($('.top-filter-hearder-2').css('display') == 'none');
+                    }, 1000);
+                });
+
+                $('#change-icons').click(function () {
+                    $('.fa-bars').toggleClass('fa-times fa-x2')
+                });
+            }
+
+            $(document).ready(function () {
+                $(window).bind('resize', function () {
+                    if ($(window).width() < 992) {
+                        $('.togglt_hide').addClass('togglt_show');
+                        $('.togglt_hide2').removeClass('togglt_show2');
+                        $('.data_hide').removeClass('data_show');
+                    }
+                    else {
+                        $('.togglt_hide').removeClass('togglt_show');
+                        $('.togglt_hide2').addClass('togglt_show2');
+                        $('.data_hide').addClass('data_show');
+                    }
+                })
+            })
+        </script>
+
+
+        <script type="text/javascript" id="HighligtMenu">
+            $(document).ready(function () {
+                setTimeout(function () { AddMenuLists(); }, 1500);
+                TableRowEdit();
+            });
+            $(function () {
+                Highligt_Menu_Urls();
+            });
+
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(TableRowEdit);
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(Highligt_Menu_Urls);
+
+            function Highligt_Menu_Urls() {
+                setTimeout(function () { Highligt_Menu(); }, 2000)
+            }
+            function Highligt_Menu() {
+                var pageURL = $(location)[0].pathname + '' + $(location)[0].search;
+                var cTabval;
+                pageURL = pageURL.substr(1, pageURL.length);
+                $('.m-menu ul li a').each(function () {
+                    $(this).removeClass("Menu-Active");
+                });
+                $('.m-menu ul li a').each(function () {
+                    var ddlstt = $(this).attr("dataRL-clr");
+                    if (ddlstt != undefined) {
+                        if ((this.href.indexOf(pageURL) != -1) || (ddlstt.indexOf(pageURL) != -1)) {
+                            cTabval = $(this);
+                            $(this).addClass('Menu-Active');
+                            return;
+                        }
+                    }
+                    else {
+                        if ((this.href.indexOf(pageURL) != -1)) {
+                            cTabval = $(this);
+                            $(this).addClass('Menu-Active');
+                            return;
+                        }
+                    }
+                });
+
+                //if (cTabval != null && cTabval != undefined && cTabval != "") {
+                //    //  $("[id$=HdnMnuSltdhtml]").val(cTabval);
+                //    var nval = cTabval.parents("div")[0].attributes["dataid-tab"].nodeValue;
+                //    var nvtxt = $(cTabval)[0].innerText;
+                //    // if ($("[id$=navpathSitePath]")[0].innerHTML.indexOf(nvtxt) == -1) {                   
+                //    $("[id$=navpathSitePath]").html('');
+                //    $("[id$=navpathSitePath]").append('<li>Shown as</li>');
+                //    $("[id$=navpathSitePath]").append('<li><a data-toggle="tab" data-tabs=".gtabs.demo" data-tab=".' + nval + '" href="#">' + nvtxt + '</a></li>');
+                //    // }
+                //    SetTopFilet_Data();
+                //}
+                Open_NavPathLink();
+            }
+
+            function TableRowEdit() {
+                $('.fa, .glyphicon, td a').on("click", function () {
+                    $(this).closest('table').find('tr').each(function () {
+                        $(this).removeClass('table-edit-css-fa');
+                    });
+                    $(this).closest('tr').addClass('table-edit-css-fa');
+                    $('[id*="hdntblRidxVl"]').val($(this).closest('tr').index());
+                    $('[id*="hdntblSidxVl"]').val($(this).closest('table').attr("id"));
+                });
+
+                var pp = $('[id*="hdntblRidxVl"]').val();
+                var tblid = $('[id*="hdntblSidxVl"]').val();
+                if (pp != "" && pp != undefined && pp != null && tblid != "" && tblid != undefined && tblid != null) {
+                    $('#' + tblid + ' tr').each(function () {
+                        $(this).removeClass('table-edit-css-fa');
+                    });
+                    var id11 = parseFloat(pp);
+                    $('#' + tblid + ' tbody tr, #' + tblid + ' tr').eq(id11 + 1).addClass('table-edit-css-fa');
+                    //if ($('#' + tblid + '').hasClass('dtr-inline')) {
+                    //    var id1 = parseFloat(pp);
+                    //    $('#' + tblid + ' tbody tr, #' + tblid + ' tr').eq(id1 + 1).addClass('table-edit-css-fa');
+                    //}
+                    //else {
+                    //    var id11 = parseFloat(pp);
+                    //    $('#' + tblid + ' tbody tr, #' + tblid + ' tr').eq(id11 + 1).addClass('table-edit-css-fa');
+                    //}
+                }
+            }
+            function AddMenuLists() {
+                $('#sidebar .nav-list li ul li a').each(function () {
+                    if ($(this).attr("href") == "GISNew") {
+                        $(this).closest("ul").append('<li><a style="background-color:#fdf0de" href="javascript:void(0);" onclick="GotoOtherWorkShow();"><i class="menu-icon fa fa-caret-right"></i>FES</a><b class="arrow"></b></li>');
+                    }
+                });
+            }
+
+            function GotoOtherWorkShow() {
+                var id = $('[id*=hdnfesusival]').val();
+                var id1 = $('[id*=hdnfesuspval]').val();
+                var loc = $('[id*=hdnfeslocval]').val();
+                var rdir = $('[id*=hdnRedirurls]').val();
+                window.location.href = loc + "?ValidID=" + id + "&ValidID1=" + id1 + "&ValidID2=" + rdir;
+            }
+            function ZoomInIma(id) {
+                $('.imagepreview').attr('src', $("#" + id).find('img').attr('src'));
+                $('#imagemodal_img').modal('show');
+            }
+
+            function Gridview_Footable() {
+                $(".grd").DataTable().destroy();
+                $('.grd').DataTable({
+                    "language": {
+                        "zeroRecords": "Data not found",
+                        "infoEmpty": "No Records"
+                    },
+                    fixedHeader: true,
+                    bDeferRender: true,
+                    bDestroy: true,
+                    bAutoWidth: true,
+                    // sScrollX: true,
+                    "initComplete": function (settings, json) {
+                        $("#DataTableID").wrap("<div style='overflow:auto; width:100%;position:relative;'></div>");
+                    },
+                    sScrollXInner: "100%",
+                    sScrollHeadInner: "100%",
+                    order: [],
+                    aaSorting: [],
+                    fnInitComplete: function (oSettings) { $(window).resize(); },
+                    fnDrawCallback: function (oSettings) { $(window).trigger('resize'); }
+                }).columns.adjust();
+            }
+
+            function Gridview_Footable_ID(id, IsCtrlID) {
+                let ctrl;
+                if (IsCtrlID) {
+                    ctrl = "[id*=" + id + "]";
+                }
+                else {
+                    ctrl = "." + id + "";
+                }
+
+                $(ctrl).DataTable().destroy();
+                $(ctrl).DataTable({
+                    "language": {
+                        "zeroRecords": "Data not found",
+                        "infoEmpty": "No Records"
+                    },
+                    fixedHeader: true,
+                    bDeferRender: true,
+                    bDestroy: true,
+                    bAutoWidth: true,
+                    // sScrollX: true,
+                    "initComplete": function (settings, json) {
+                        $("#DataTableID").wrap("<div style='overflow:auto; width:100%;position:relative;'></div>");
+                    },
+                    sScrollXInner: "100%",
+                    sScrollHeadInner: "100%",
+                    order: [],
+                    aaSorting: [],
+                    fnInitComplete: function (oSettings) { $(window).resize(); },
+                    fnDrawCallback: function (oSettings) { $(window).trigger('resize'); }
+                }).columns.adjust();
+            }
+            function ToggleDivFilter(btnID) {
+                $('[id$=' + btnID + ']').toggle(500);
+            }
+
+
+        </script>
+
+    </div>
+
+
+
+                                </div>
+                           
+                    </div>
+                </div>             
+            </div>
+            <div class="container-fluid foot-posi">
+                <div class="row" id="contact" style="display: none;">
+                    <div class="col-xl-11 col-lg-11 col-md-11 col-sm-12 m-auto">
+                        <h3 id="ctl00_contacthead" class="w3ls-title">Contact</h3>
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 contact-footer">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="display: inline-flex;">
+                                        <a href="javascript:void(0)" onclick="GoogleMapAciwrm();" title="ACIWRM Location Map">
+                                            <span class="fa fa-map-marker" aria-hidden="true"></span></a>
+                                        <h6 id="ctl00_contacth">ACIWRM, Karnataka</h6>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="display: inline-flex;">
+                                        <span class="fa fa-phone f-25" aria-hidden="true"></span>
+                                        <h6>080 222 620 42 /43/44/45
+                                        </h6>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="display: inline-flex;">
+                                        <span class="fa fa-location-arrow  f-25" aria-hidden="true"></span>
+                                        <h6>registrar[at]aciwrm[dot]org
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 contact-right-w3l contactCss" style="padding: 1em 2em 1rem 0rem;">
+
+                                <h2 class="m-10 text-center d-none" style="color: #2954a2; margin: -10px 0px 10px !important;">
+                                    <i class="glyphicon glyphicon-list-alt m-r-15"></i><span id="ctl00_writeus">WRITE TO US</span></h2>
+                                <div class="col-sm-12 form-group">
+                                    <input name="ctl00$txt_FName" type="text" maxlength="30" id="ctl00_txt_FName" class="form-control" placeholder="Name" />
+                                    
+                                </div>
+                                <div class="col-sm-12 form-group">
+                                    <input name="ctl00$txt_MobileNo" type="text" maxlength="10" id="ctl00_txt_MobileNo" class="form-control" placeholder="Mobile No." />
+                                    
+                                </div>
+                                <div class="col-sm-12 form-group">
+                                    <input name="ctl00$txt_Email" type="text" maxlength="30" id="ctl00_txt_Email" class="form-control" placeholder="Email-ID" />
+                                    
+                                </div>
+                                <div class="col-sm-12 form-group">
+                                    <input name="ctl00$txt_Subject" type="text" maxlength="50" id="ctl00_txt_Subject" class="form-control" placeholder="Subject" />
+                                    
+                                </div>
+                                <div class="col-sm-12 form-group">
+                                    <textarea name="ctl00$txt_TextBody" rows="2" cols="20" id="ctl00_txt_TextBody" class="form-control" placeholder="Your Message" onkeypress="return textarea_Maxlenght_keypress(this,&#39;200&#39;,event)">
+</textarea>
+                                    
+                                </div>
+                                <div class="col-sm-12 form-group">
+                                    <input type="submit" name="ctl00$Btn_ContactToUs" value="Submit" id="ctl00_Btn_ContactToUs" class="btn btn-success" />
+                                </div>
+
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 p-0">
+                                <div id="ctl00_id_contantD" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 p-0 contactCss"><h2 class='f-22 m-10 text-center d-none' style='color: #2954a2;'><i class='fa fa-phone m-r-15'></i>CONTACT DETAILS</h2><h4>ACIWRM -</h4><ul><li><strong>Address</strong>:&nbsp; No.1/1, First Floor, KSFC Bhavan, Thimmaiah Road, Near Cantonment Railway Station, Bengaluru -560052</li><li><strong>Phone</strong>:&nbsp; +91-80-22262042 /43 /44 /45</li><li><strong>Fax</strong>: +91-80-22262045</li><li><strong>E-mail</strong>:&nbsp;registrar[at]aciwrm[dot]org</li></ul><div style='margin-top: 5px; margin-bottom: 5px;' class='separator transparent'></div><h4>Water Resources Department, Govt of Karnataka -</h4><ul><li><strong>Address</strong>:&nbsp;Room No.305/306, 3rd Floor, Vikas Soudha, Bengaluru-560001</li><li><strong>Phone</strong>:&nbsp;+91-80-22255524, 22257064</li><li><strong>Email</strong>:&nbsp;prs-wr[at]karnataka[dot]gov[dot]in, secytech-wr[at]karnataka[dot]gov[dot]in</li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row py-2" style="background-color: #ccc;">
+
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <label class="mb-0">Email: kwris@aciwrm.org</label>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <label class="mb-0">&copy; <a class="text-primary" href="#">KWRIS.</a>All Rights Reserved</label>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 text-right"><a class="text-primary" href="javascript:void(0);" onclick="Toggles('contact',true);">Contact</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- REQUIRED SCRIPTS -->
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/adminlte.min.js"></script>
+        <script src="Scripts/Krish-Multiselect.js"></script>
+        <script type="text/javascript">
+            function GoogleMapAciwrm() {
+                var url = "https://www.google.co.in/maps/place/Advanced+Centre+for+Integrated+Water+Resources+Management+(ACIWRM)/@12.9912262,77.5975536,18z/data=!4m8!1m2!2m1!1sKSFC+Bhavan,+Thimmaiah+Road,+Near+Cantonment+Railway+Station!3m4!1s0x0:0x55525194880ce20f!8m2!3d12.991293!4d77.598178";
+                window.open(url, '_blank');
+            }
+
+
+            function Toggles(CtrlID, IsCtrlID) {
+                if (IsCtrlID == true) {
+                    $("[id$=" + CtrlID + "]").toggle(500);
+                }
+                else {
+                    $("." + CtrlID).toggle(500);
+                }
+            }
+            function hideProgress() {
+                $('.overlayWaitmadiv').hide();
+            }
+            function isDataLabels() {
+                $('.overlayWaitmadiv').show();
+            }
+            function SetLangaugeID11() {
+                $('.overlayWaitmadiv').show();
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    url: 'MasterBLogin.master/SetLangIDs',
+                    // data: { "ValidID": $("[id$=DDL_Lang]").val()},
+                    success: function (response) {
+                        $('.overlayWaitmadiv').hide();
+                    },
+                    error: function () {
+                        $('.overlayWaitmadiv').hide();
+                        alert("Error loading data! Please try again.");
+                        return false;
+                    }
+                });
+            }
+
+            function SetLangaugeID() {
+                debugger;
+                var obj = {
+                    ValidID: $("[id$=DDL_Lang]").val()
+                }
+                PageMethods.SetLangIDs(obj, function (r) {
+                    //success
+                }, function (err) {
+                    //failure
+                });
+                //debugger;
+                //var ValidID = $("[id$=DDL_Lang]").val();
+                //PageMethods.SetLangIDs(ValidID, OnSucceeded, OnFailed);
+
+            }
+            function OnSucceeded(result, userContext, methodName) {
+                return;
+            }
+            function OnFailed(error, userContext, methodName) {
+                return;
+            }
+            if (typeof (Sys) !== "undefined") { Sys.Application.notifyScriptLoaded(); }
+        </script>
+        <script>
+            $(document).ready(function () {
+                $("[data-toggle='tab']").click(function () {
+                    var tabs = $(this).attr('data-tabs');
+                    var tab = $(this).attr("data-tab");
+                    $(tabs).find(".gtab").removeClass("active");
+                    $(tabs).find(tab).addClass("active");
+
+                });
+                $('.nav_path a ').click(function () {
+                    $('.main-sidebar').addClass('active');
+                    $(this).parents('body').removeClass('sidebar-collapse');
+                });
+
+                $('#close-lt').unbind().click(function () {
+                    $(this).parents('body').addClass('sidebar-collapse');
+                });
+
+
+
+                $('.menu-tb a').click(function () {
+                    $('.menu-tb a').removeClass('active');
+                    $(this).addClass('active');
+                });
+
+                $('.last-close').click(function () {
+                    $(this).parents('.gtab').removeClass('active');
+                });
+
+                $('label').click(function () {
+                    $(this).parent('li').children('.m-menu').addClass('active')
+                });
+
+
+                $('svg').click(function () {
+                    $(this).parent('.m-menu__header').parent('.m-menu').removeClass('active');
+                });
+                $('.nav-item').click(function () {
+                    if (!$(this).parents('body').hasClass('sidebar-collapse')) {
+                        $('.m-menu ').removeClass('active');
+                    }
+
+                });
+
+                $('.main-sidebar').mouseleave(function () {
+                    if ($(this).parents('body').hasClass('sidebar-collapse')) {
+                        $('.m-menu ').removeClass('active');
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#filter-wrap').click(function () {
+                    $('.filter_warper-hide').toggle(500)
+                });
+                $('#change-icons').click(function () {
+                    $('.fa-bars').toggleClass('fa-times fa-x2')
+                })
+
+            })
+        </script>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("ctl00_ToolkitManagerACWIRM_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.FilteredTextBoxBehavior, {"ValidChars":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ","id":"ctl00_Filteredtxt_FName"}, null, null, $get("ctl00_txt_FName"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.FilteredTextBoxBehavior, {"ValidChars":"0123456789","id":"ctl00_Filteredtxt_MobileNo"}, null, null, $get("ctl00_txt_MobileNo"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.FilteredTextBoxBehavior, {"ValidChars":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._@","id":"ctl00_Filteredtxt_Email"}, null, null, $get("ctl00_txt_Email"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.FilteredTextBoxBehavior, {"ValidChars":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ","id":"ctl00_Filteredtxt_Subject"}, null, null, $get("ctl00_txt_Subject"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.FilteredTextBoxBehavior, {"ValidChars":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789. ","id":"ctl00_Filteredtxt_TextBody"}, null, null, $get("ctl00_txt_TextBody"));
+});
+//]]>
+</script>
+</form>
+</body>
+
+<!-- Mirrored from kwris.azurewebsites.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Oct 2021 05:32:35 GMT -->
+</html>
