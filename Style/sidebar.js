@@ -65,9 +65,10 @@
             // A layer must have a title to appear in the layerswitcher
               title: 'District',
             source: new ol.source.ImageArcGISRest({
-              ratio: 1,
+                ratio: 1,
+                visible: false,
              // params: { LAYERS: 'show:3' },
-                url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer',
+                url: 'http://tracgis.telangana.gov.in/arcgis/rest/services/RIS_NEW/RIS_AdminLayers/MapServer',
                 maxZoom: 19
             })
           }),
