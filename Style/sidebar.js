@@ -54,6 +54,32 @@
           })
         ]
       }),
+
+        new ol.layer.Group({
+            title: 'Geo server Layers',
+
+            fold: 'close',
+            layers: [
+                new ol.layer.Tile({
+                    title: 'tiger-ny',
+                    extent: [-13884991, 2870341, -7455066, 6338219],
+                    source: new ol.source.TileWMS({
+                        url: 'http://localhost:8080/geoserver/wms',
+                        params: {
+                            'LAYERS': 'tiger: giant_polygon'},
+                        serverType: 'geoserver',
+                        transition : 0,
+
+                    }),
+
+                }),
+
+            ]
+
+        }),
+
+
+
       new ol.layer.Group({
         // A layer must have a title to appear in the layerswitcher
         title: 'Overlays',
@@ -127,7 +153,7 @@
       })
     ],
     view: new ol.View({
-        center: ol.proj.transform([79, 18], 'EPSG:4326', 'EPSG:3857'),
+        center: ol.proj.transform([74, 17], 'EPSG:4326', 'EPSG:3857'),
       zoom: 8
     })
   });
