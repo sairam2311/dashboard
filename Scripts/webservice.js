@@ -22,16 +22,22 @@ $(document).ready(function () {
 function Getdet() {
     debugger;
     $.ajax({
-        type: "GET",
-        url: "http://tracgis.telangana.gov.in/agriculturepoints/WebService1.asmx/HelloWorld", // add web service Name and web service Method Name
-       // data: "{'Custname':'" + Name + "'}", //web Service method Parameter Name and ,user Input value which in Name Variable.  
+      
+        url: "https://cors-anywhere.herokuapp.com/http://tracgis.telangana.gov.in/agriculturepoints/WebService1.asmx/HelloWorld", // add web service Name and web service Method Name
+       // data: "{'Custname':'" + Name + "'}", //web Service method Parameter Name and ,user Input value which in Name Variable. 
+        type: "POST",
         contentType: "application/json; charset=utf-8",
-        dataType: "text",
-        crossDomain: true,
+        // set the request header authorization to the bearer token that is generated
+        headers: {
+            "X-Requested-With": "XMLHttpRequest"
+        },
+        dataType: "json",
+       
         success: function (response) {
-           // $("#spnGetdet").html(response.d); //getting the Response from JSON  
+            $("#spnGetdet").html(response.d); //getting the Response from JSON  
 
-            alert(response.d);
+            console.log(response.d);
+            
         },
         failure: function (msg) {
             alert(msg);

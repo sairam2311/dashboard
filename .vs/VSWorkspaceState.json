@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Login"
+    "\\Scripts",
+    "\\Style"
   ],
+  "SelectedNode": "\\Scripts\\webservice.js",
   "PreviewInSolutionExplorer": false
 }
